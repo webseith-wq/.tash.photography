@@ -1,0 +1,267 @@
+/* --- GENERAL SETTINGS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+:root {
+    --primary-blue: #0a192f;
+    --gold: #d4af37;
+    --light-gold: #f1c40f;
+    --text-light: #e6f1ff;
+    --bg-light: #f8f9fa;
+}
+body {
+    background-color: var(--bg-light);
+    color: #38A30B;
+    line-height: 1.6;
+}
+
+/* --- WIDE NAVIGATION --- */
+.navbar {
+    background-color: var(--primary-blue);
+    padding: 15px 5%; /* 5% padding makes it wide */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--gold);
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.logo-container img {
+    height: 50px;
+}
+.logo-container h1 {
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+.logo-container h1 span {
+    color: var(--gold);
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+.nav-links a:hover, .nav-links a.active {
+    color: var(--gold);
+}
+
+/* --- WIDE HERO SECTION (Home Page) --- */
+.hero {
+    /* Replace hero-bg.jpg with your own wide studio or wedding photo */
+    background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), url('images/hero-bg.jpg') center/cover no-repeat;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 5%;
+}
+.hero h2 {
+    font-size: 4rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.hero p {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin-bottom: 30px;
+}
+
+/* --- BUTTONS --- */
+.btn {
+    background-color: var(--gold);
+    color: var(--primary-blue);
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+.btn:hover {
+    background-color: white;
+    color: var(--primary-blue);
+}
+
+/* --- PAGE BANNERS (For inner pages) --- */
+.page-banner {
+    background-color: var(--primary-blue);
+    color: white;
+    text-align: center;
+    padding: 80px 5%;
+}
+.page-banner h1 {
+    font-size: 3rem;
+    color: var(--gold);
+}
+
+/* --- WIDE SECTION LAYOUTS --- */
+.section {
+    padding: 80px 5%; /* Wide padding */
+    width: 100%;
+}
+.dark-section {
+    background-color: var(--primary-blue);
+    color: white;
+}
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--primary-blue);
+    position: relative;
+}
+.section-title::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background-color: var(--gold);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.dark-section .section-title {
+    color: var(--gold);
+}
+
+/* --- SERVICES GRID --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+.service-box {
+    background: white;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-bottom: 4px solid var(--gold);
+    transition: 0.3s;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.service-box:hover {
+    transform: translateY(-10px);
+}
+
+/* --- PORTFOLIO GALLERY --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+.gallery-item {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    cursor: pointer;
+}
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+/* --- CONTACT INFO --- */
+.contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+.contact-card {
+    background: var(--primary-blue);
+    color: white;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--gold);
+}
+.contact-card h3 {
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* --- FOOTER & CREATOR CREDIT --- */
+footer {
+    background-color: #050d18;
+    color: white;
+    text-align: center;
+    padding: 30px 5%;
+    border-top: 3px solid var(--gold);
+}
+.creator-credit {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1rem;
+}
+.creator-credit strong {
+    color: var(--gold);
+}
+.cwd-logo {
+    height: 40px;
+    background-color: white;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .navbar { flex-direction: column; gap: 15px; padding: 15px; }
+    .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
+    .hero h2 { font-size: 2.5rem; }
+    .hero p { font-size: 1.1rem; }
+    .section { padding: 50px 5%; }
+    .creator-credit { flex-direction: column; }
+}
